@@ -1,9 +1,17 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-basic-page',
-  imports: [],
+  imports: [LowerCasePipe, UpperCasePipe, TitleCasePipe],
   templateUrl: './basic-page.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class BasicPage {}
+export default class BasicPage {
+
+  //Signals
+
+    nameLower= signal('Raúl Sanchez')
+    nameUpper= signal('RAUL')
+    fullName = signal('rAvL sAnCheZ')
+
+}
