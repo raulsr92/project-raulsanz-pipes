@@ -18,4 +18,17 @@
   </app-card>
 
 
+  <app-card title="i18nPluraPipe">
+
+    <p>Actualmente {{clients().length | i18nPlural:clientsMap()  }}  </p>
+
+    <button
+      [disabled]="clients().length===0"
+      (click)="deleteClient()"
+      class="btn btn-secondary">
+        Borrar cliente
+    </button>
+
+  </app-card>
+
 </div>
