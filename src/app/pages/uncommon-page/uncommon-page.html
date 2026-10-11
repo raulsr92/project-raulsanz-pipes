@@ -46,4 +46,29 @@
     <p class="text-primary">{{clients() | slice:0:-1 }}</p>
   </app-card>
 
+
+  <app-card title="Json Pipe">
+    <div>
+        <h3 >Sin pipe</h3>
+        <p class="text-primary">{{clients()}}</p>
+        <h3>Con pipe</h3>
+        <p class="text-primary">{{clients() | json}}</p>
+    </div>
+
+    <div>
+        <h3 >Sin pipe</h3>
+        <pre class="text-primary">{{client()}}</pre>
+        <h3>Con pipe</h3>
+        <pre class="text-primary">{{client()| json}}</pre>
+    </div>
+
+    <div>
+        <h3 >Sin pipe</h3>
+        <p class="text-primary">{{clients().join(", ")}}</p>
+        <h3>Con pipe</h3>
+        <p class="text-primary">{{clients().join(", ") | json }}</p>
+    </div>
+
+  </app-card>
+
 </div>
