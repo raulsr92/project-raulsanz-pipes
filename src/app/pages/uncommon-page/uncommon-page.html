@@ -68,7 +68,18 @@
         <h3>Con pipe</h3>
         <p class="text-primary">{{clients().join(", ") | json }}</p>
     </div>
+  </app-card>
 
+  <app-card title="KeyValue Pipe">
+    <ul>
+      @for (item of profile |keyvalue:null; track $index) {
+        <li>
+          <span>
+            My {{item.key}} is {{item.value}}
+          </span>
+        </li>
+      }
+    </ul>
   </app-card>
 
 </div>
