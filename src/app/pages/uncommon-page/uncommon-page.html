@@ -5,7 +5,7 @@
 </section>
 
 
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-20">
 
   <!--Tarjeta: ng-content-->
 
@@ -89,6 +89,22 @@
     @if (promiseValue | async; as value) {
       <p class="text-primary">{{value}}</p>
     }
+  </app-card>
+
+  <app-card title="Async with Observables Pipe">
+
+    <p>{{myObservableTimer | async}}</p>
+
+    @if ( myObservableTimer| async; as value) {
+
+      <p class="text-primary">{{value}}</p>
+    }
+
+    @else {
+      <p class="text-primary">...cargando</p>
+    }
+
+
   </app-card>
 
 </div>
