@@ -1,1 +1,25 @@
-<p>custom-page works!</p>,
+<section class="mx-10 my-9">
+  <h1 class="text-2xl font-bold">Pipes personalizados</h1>
+  <h3 class="text-xl font-thin">Pipes no incluídos en Angular</h3>
+
+</section>
+
+<div>
+
+  <div class="stats shadow">
+    <div class="stat">
+      <div class="stat-title">ToggleCase Pipe</div>
+      <div class="stat-value">{{name() | toggleCase: upperCase()}}</div>
+      <div class="stat-desc">{{name()}}</div>
+
+      <button
+        class="btn btn-primary mt-3"
+        (click)="onToggle()">
+        ToggleCase Pipe
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
