@@ -1,5 +1,6 @@
 import { Color, Creator, Hero } from "../interfaces/hero.interface";
 
+
 export const heroes: Hero[] = [
   {
     id: 1,

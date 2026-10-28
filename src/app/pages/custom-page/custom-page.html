@@ -40,7 +40,7 @@
 
 <!-- Table -->
 
-  <section class="overflow-x-auto w-full">
+  <section class="overflow-x-auto w-full mb-10">
 
     <table class="table table-xs w-full">
       <!-- head -->
@@ -60,8 +60,22 @@
           <tr>
             <th>{{ id +1 }}</th>
             <td>{{hero.name}}</td>
-            <td>{{hero.canFly}}</td>
-            <td>{{hero.color}}</td>
+            <td>
+              <span
+                class="text-xs w-44"
+                [class.text-success]="hero.canFly"
+                [class.text-accent]="!hero.canFly">
+                {{hero.canFly | canFly}}
+              </span>
+            </td>
+            <td>
+              <span
+                class="text-xs w-44"
+                [style.color]="colorMap()[hero.color]"
+              >
+                {{hero.color | heroColor}}
+              </span>
+            </td>
             <td>{{hero.creator}}</td>
           </tr>
         }

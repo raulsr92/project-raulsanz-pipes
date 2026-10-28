@@ -1,9 +1,9 @@
 
 export enum Color {
-  red,
-  black,
-  blue,
-  green,
+  red, //0
+  black, //1
+  blue, //2
+  green, //3
 }
 
 export enum Creator {
