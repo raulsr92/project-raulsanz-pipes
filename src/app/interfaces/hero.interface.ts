@@ -7,8 +7,8 @@ export enum Color {
 }
 
 export enum Creator {
-  DC,
-  Marvel,
+  DC, //0
+  Marvel, //1
 }
 
 export interface Hero {

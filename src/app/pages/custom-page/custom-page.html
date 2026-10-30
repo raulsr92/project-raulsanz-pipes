@@ -71,12 +71,21 @@
             <td>
               <span
                 class="text-xs w-44"
-                [style.color]="colorMap()[hero.color]"
+                [style.color]="hero.color | heroTextColor"
               >
-                {{hero.color | heroColor}}
+                {{hero.color | heroColor | titlecase}}
               </span>
             </td>
-            <td>{{hero.creator}}</td>
+            <td>
+              <span
+                class="font-bold"
+                [style.color]="hero.creator == 0? '#007BBC':'#E61C23'"
+
+
+                >
+                {{hero.creator | heroCreator}}
+              </span>
+            </td>
           </tr>
         }
 

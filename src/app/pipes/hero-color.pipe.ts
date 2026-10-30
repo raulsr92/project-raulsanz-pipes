@@ -10,16 +10,7 @@ export class HeroColorPipe implements PipeTransform {
 
   transform(value: Color): string {
 
-    switch(value){
-      case Color.red:
-        return 'Red'
-      case Color.black:
-        return 'Black'
-      case Color.blue:
-        return 'Blue'
-      case Color.green:
-        return 'Green'
-    }
+    return Color[value]
   }
 
 }
