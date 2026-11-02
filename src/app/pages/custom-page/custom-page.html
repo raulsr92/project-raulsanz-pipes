@@ -26,13 +26,14 @@
 <!-- Buttons -->
 
   <section class="my-2" >
-    <h1 class="text-2xl font-bold">Pipes personalizados en acción</h1>
+    <h1 class="text-2xl font-bold">Filtrando por:</h1>
+    <h1 class="text-2xl font-bold">Ordenando por: {{sortBy()}}</h1>
 
     <div class="flex gap-2 justify-end w-full my-9">
-        <button class="btn btn-primary">Por nombre</button>
-        <button class="btn btn-accent">Por volar</button>
-        <button class="btn btn-secondary">Por color</button>
-        <button class="btn btn-info">Por creador</button>
+        <button (click)="sortBy.set('name')" class="btn btn-primary">Por nombre</button>
+        <button (click)="sortBy.set('canFly')"  class="btn btn-accent">Por volar</button>
+        <button (click)="sortBy.set('color')"  class="btn btn-secondary">Por color</button>
+        <button (click)="sortBy.set('creator')"  class="btn btn-info">Por creador</button>
 
     </div>
 
@@ -56,7 +57,7 @@
 
       <tbody>
         <!-- row 1 -->
-        @for (hero of heroes(); track hero.id; let id = $index) {
+        @for (hero of heroes() | heroSortBy:sortBy(); track hero.id; let id = $index) {
           <tr>
             <th>{{ id +1 }}</th>
             <td>{{hero.name}}</td>
@@ -80,8 +81,6 @@
               <span
                 class="font-bold"
                 [style.color]="hero.creator == 0? '#007BBC':'#E61C23'"
-
-
                 >
                 {{hero.creator | heroCreator}}
               </span>
